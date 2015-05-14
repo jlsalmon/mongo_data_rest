@@ -6,8 +6,6 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Version;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-
-
 @Document
 public class Ticket {
 
@@ -19,13 +17,13 @@ public class Ticket {
 
 	private String type;
 
-	private Map<String, String> texts;
+	private Map<String, Value> texts;
 
 	public String getId() {
 		return id;
 	}
 
-	public Map<String, String> getTexts() {
+	public Map<String, Value> getTexts() {
 		return texts;
 	}
 
@@ -41,7 +39,7 @@ public class Ticket {
 		this.id = id;
 	}
 
-	public void setTexts(Map<String, String> texts) {
+	public void setTexts(Map<String, Value> texts) {
 		this.texts = texts;
 	}
 
