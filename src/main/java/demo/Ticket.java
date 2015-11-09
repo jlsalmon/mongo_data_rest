@@ -1,54 +1,19 @@
 package demo;
 
-import java.util.Map;
-
+import lombok.Data;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.Version;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Map;
+
 @Document
+@Data
 public class Ticket {
 
-	@Id
-	private String id;
+  @Id
+  private String id;
 
-	@Version
-	private Long version;
+  private String description;
 
-	private String type;
-
-	private Map<String, Value> texts;
-
-	public String getId() {
-		return id;
-	}
-
-	public Map<String, Value> getTexts() {
-		return texts;
-	}
-
-	public String getType() {
-		return type;
-	}
-
-	public Long getVersion() {
-		return version;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public void setTexts(Map<String, Value> texts) {
-		this.texts = texts;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
-
-	public void setVersion(Long version) {
-		this.version = version;
-	}
-
+  private Map<String, Object> properties;
 }
